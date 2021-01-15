@@ -10,11 +10,11 @@ exports.run = async (client, message, args) => {
         talkedRecently.add(message.author.id);
         setTimeout(() => {
         
-
+//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
           talkedRecently.delete(message.author.id);
         }, 3000);
     } 
-  const yazi = args.slice(0).join('+'); 
+  const yazi = args.slice(0).join('+'); //Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
 
   if(!yazi) return message.channel.send(`**Lütfen yazı yazınız.** :envelope: `)
   const linqo = `https://habbofont.net/font/habbo_new/${yazi}.gif`
@@ -30,13 +30,13 @@ exports.run = async (client, message, args) => {
 }
 exports.conf = {
     enabled: true,
-    guildOnly: false,
-    aliases: ['yazıfoto','yazı-foto'],
+    guildOnly: false,//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+    aliases: ['yazıfoto','yazı-foto'],//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
     permLevel: 0
-}
+}//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
 
-exports.help = {
+exports.help = {//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
     name: 'habbo',
-    description: 'Yazdığınız yazıyı dinamik çevirir.',
+    description: 'Yazdığınız yazıyı dinamik çevirir.',//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
     usage: 'habbo <yazı>'
-}
+}//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
