@@ -13,7 +13,7 @@ exports.run = async(client, message) => {
   database.set(`aboneyetkilisi.${message.guild.id}`, rol.id)
   message.channel.send(`Abone yetkilisi başarıyla ${rol} olarak ayarlandı.`)
 }
-//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+//Rache Code , Telif Hakları Vardır, https://discord.gg/VcfpUgtajB
 exports.conf = {
   enabled: true,
   guildOnly: false,
