@@ -23,7 +23,7 @@ const ayarlı = await data.fetch(`ppgif.${message.guild.id}`)//Rache Code , Teli
 if(!ayarlı) return message.channel.send(`Kanal zaten ayarlı değil :)`)
 //Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
 data.delete(`ppgif.${message.guild.id}`)
-message.channel.send(`PP ve GİF fotoğrafların gönderileceği kanal sıfırlandı.//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+message.channel.send(`PP ve GİF fotoğrafların gönderileceği kanal sıfırlandı. 
 Ayarlamak için: pp-gif ayarla #channel`) }//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
 //Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
 };
