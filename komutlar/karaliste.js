@@ -3,7 +3,7 @@ const db = require('quick.db')
 const ayarlar = require('../ayarlar.json')
 exports.run = (client,message,args)=>{//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
 //Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-    if(message.author.id !== "666223000739381258") return message.channel.send('Bu komut sahibimin komudu. Bunu kullanmak için izniniz yok!!')
+    if(message.author.id !== "627915338230661131") return message.channel.send('Bu komut sahibimin komudu. Bunu kullanmak için izniniz yok!!')
     let user = message.mentions.users.first() || client.users.cache.get(args[0])
     let reason = args.slice(1).join(' ')
     if(!user) return message.channel.send('Karalisteye almam için bir kullanıcı etiketleyin !!')
