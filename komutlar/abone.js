@@ -41,7 +41,7 @@ exports.help = {//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt
 }//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
 
 exports.play = {//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-  kullanım: '!abone-y-rol @rol',//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+  kullanım: 'abone-y-rol @rol',//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
   açıklama: 'Abone Yetkili Rolünü Ayarlarsınız',//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
   kategori: 'Abone'//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
 }
