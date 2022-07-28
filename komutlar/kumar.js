@@ -13,13 +13,9 @@ function getRandomInt(min, max) {
 }
 
 
-/*
-
-BU KOMUDU HAZIRLADIĞI İÇİN HİVIN GARDAŞIMA ÇOK TEŞG EDİYORUM...
-SONRADA EDİTLEDİĞİM İÇİN KENDİME TEŞG EDİYORUM...
 
 
-*/
+
 
 exports.run = async (client, message, args) => {
     let timeout = 30000 //bunu ellemeyin 24 saat 
@@ -38,7 +34,7 @@ exports.run = async (client, message, args) => {
           db.add(`bakiyecdare-${message.author.id}`, randomizer)
           let para1 = new Discord.MessageEmbed()
           .setColor(client.ekoayarlar.renk)
-          .setDescription(`**Kumar**`)
+          .setDescription(`**çalış**`)
           .addField(`Aldığınız Miktar;`, randomizer + ` ${client.ekoayarlar.parabirimi}`)
           message.channel.send(para1)
         } else {
@@ -46,7 +42,7 @@ exports.run = async (client, message, args) => {
             db.add(`bakiyecdare-${message.author.id}`, client.ekoayarlar.günlükpara)
             let para1 = new Discord.MessageEmbed()
             .setColor(client.ekoayarlar.renk)
-            .setDescription(`**Kumar**`)
+            .setDescription(`**Çalış**`)
             .addField(`Aldığınız Miktar;`, client.ekoayarlar.günlükpara + ` ${client.ekoayarlar.parabirimi}`)
             message.channel.send(para1)
           }
@@ -62,16 +58,16 @@ exports.run = async (client, message, args) => {
                 db.add(`bakiyecdare-${message.author.id}`, randomizer)
                 let para1 = new Discord.MessageEmbed()
                 .setColor(client.ekoayarlar.renk)
-                .setDescription(`**Kumar**`)
-                .addField(`Kumar Oynadınız Aldığınız Para;`, randomizer + ` ${client.ekoayarlar.parabirimi}`)
+                .setDescription(`**Çalış**`)
+                .addField(`çalıştınız Aldığınız Para;`, randomizer + ` ${client.ekoayarlar.parabirimi}`)
                 message.channel.send(para1)
               } else {
                 if(client.ekoayarlar.rastgelepara == false) {
                   db.add(`bakiyecdare-${message.author.id}`, client.ekoayarlar.günlükpara)
                   let para1 = new Discord.MessageEmbed()
                   .setColor(client.ekoayarlar.renk)
-                  .setDescription(`**Kumar**`)
-                  .addField(`Kumar Oynadınız Aldığınız Para;`, client.ekoayarlar.günlükpara + ` ${client.ekoayarlar.parabirimi}`)
+                  .setDescription(`**Çalış**`)
+                  .addField(`çalıştınız Aldığınız Para;`, client.ekoayarlar.günlükpara + ` ${client.ekoayarlar.parabirimi}`)
                   message.channel.send(para1)
                 }
               }
@@ -86,13 +82,13 @@ exports.run = async (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['kumar'],
+    aliases: ['çalış'],
     permLevel: 0,
     katagori: "Ekonomi"
 }
 
 exports.help = {
-    name: 'kumar',
+    name: 'çalış',
     description: 'Günlük para alırsınız.',
-    usage: 'günlükpara'
+    usage: 'günlükkkpara'
 }

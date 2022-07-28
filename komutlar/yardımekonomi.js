@@ -12,6 +12,7 @@ let yardım = new Discord.MessageEmbed()
 **r!kasabilgi** : Kasalar hakkında bilgi alırsınız.
 **r!kasaaç** : Kasa Açarsınız.
 **r!kumar** : Kumar Oynarsınız
+**r!market** : Marketi açarsınız.
 **r!transfer** : Hesabınızdan başka bir hesaba para transferi yaparsınız.`)
 .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL())
 .setThumbnail(client.user.avatarURL())
