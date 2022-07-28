@@ -2,10 +2,9 @@ const Discord = require('discord.js');
 
 exports.run = (client, msg, args) => {//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
   
-  if (!msg.member.roles.cache.has("765224486424936478")) return msg.channel.send("Bu komutu sadece **<@765224486424936478>** kullanabilir!")
+  if (!msg.member.roles.cache.has("765224486424936478")) return msg.channel.send("Bu komutu sadece **<@8>** kullanabilir!")
   
-  if(msg.channel.id !== "792790778065846282") return msg.channel.send("Bu komutu sadece <#792790778065846282> kanalında **kullanabilirsin!**")
-  
+
   let kodIsım = args[0]
   if(!kodIsım) return msg.channel.send("Bir kod ismi **belirt!**")//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
   
