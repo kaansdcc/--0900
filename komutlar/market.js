@@ -3,7 +3,7 @@ const db = require('quick.db');
 
 
 exports.run = async (client, message, args) => {
- if (!args[0]) return message.reply(`Rache Markete Hoşgeldin! \n\n\n:bike: **Bisiklet[150]**, \n:motorcycle: **Motosiklet[2500]**, \n:blue_car: **Araba[15000]**,\n:airplane: **Uçak[100000]** `)
+ if (!args[0]) return message.reply(`darke Markete Hoşgeldin! \n\n\n:bike: **Bisiklet[150]**, \n:motorcycle: **Motosiklet[2500]**, \n:blue_car: **Araba[15000]**,\n:airplane: **Uçak[100000]** `)
 
   if (args[0] === 'bisiklet') {
     let para = await db.get(`bakiyecdare-${message.author.id}`) 
@@ -53,8 +53,9 @@ exports.run = async (client, message, args) => {
     return message.reply(`Ürünü Başarıyla Aldınız`)
   }
 
+ 
+ 
 
-  
 }
 exports.conf = {
   
