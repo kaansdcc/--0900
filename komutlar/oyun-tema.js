@@ -18,7 +18,7 @@ exports.run = (client, message, args) => {
   const davet = new Discord.MessageEmbed()
   .setColor("RANDOM")
   .setTitle("Oyun Sunucu Şablonu")
-  .setDescription("https://discord.new/pbBYv2X7ASV2")
+  .setDescription("https://discord.new/dyMm2UehtPa3")
   message.channel.send(davet)
 }
 
