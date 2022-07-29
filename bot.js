@@ -55,7 +55,7 @@ const bot = new Discord.Client();//Rache Code , Telif Hakları Vardır, https://
 var oyun = [
 `♛ Rache, Sizin İçin Tasarlandı`,
 `➽ r!yardım r!davet`,
-`✉ Sunucunu Tanıt r!sunucutanıt`,
+`✉ r!yardım r!sor`,
 `✈ Bug Bildir r!bug-bildir`,
 `✿ Destek Sunucusuna Katılmayı Unutma !`
 ]
@@ -431,175 +431,370 @@ client.on('userUpdate', (oldUser, newUser) => {////Rache Code , Telif Hakları V
 //modlog
 
 
-client.on('channelCreate', async channel => {
-  const c = channel.guild.channels.cache.get(db.fetch(`salvomodlog_${channel.guild.id}`));
-  if (!c) return;
-    var embed = new Discord.MessageEmbed()
-                    .addField(`Kanal oluşturuldu`, ` İsmi: \`${channel.name}\`\n Türü: **${channel.type}**\nID: ${channel.id}`)
-                    .setTimestamp()
-                    .setColor("Black")
-                    .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL)
-    c.send(embed)
-});//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+client.on("messageDelete", async message => {
+  if (message.author.bot || message.channel.type == "dm") return;
 
-client.on('channelDelete', async channel => {
-  const c = channel.guild.channels.cache.get(db.fetch(`salvomodlog_${channel.guild.id}`));
-  if (!c) return;
-    let embed = new Discord.MessageEmbed()
-                    .addField(`Kanal silindi`, ` İsmi: \`${channel.name}\`\n Türü: **${channel.type}**\nID: ${channel.id}`)
-                    .setTimestamp()
-                    .setColor("Black")
-                    .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL)
+  let log = message.guild.channels.cache.get(
+    await db.fetch(`log_${message.guild.id}`)
+  );
 
-    c.send(embed)
-});
-//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-   client.on('channelNameUpdate', async channel => {//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-  const c = channel.guild.channels.cache.get(db.fetch(`salvomodlog_${channel.guild.id}`));//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-  if (!c) return;
-    var embed = new Discord.MessageEmbed()//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-                    .addField(`Kanal İsmi değiştirildi`, ` Yeni İsmi: \`${channel.name}\`\nID: ${channel.id}`)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-                    .setTimestamp()//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-                    .setColor("Black")//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-                    .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL)
-    c.send(embed)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-});//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+  if (!log) return;
 
-client.on('emojiCreate', emoji => {//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-  const c = emoji.guild.channels.cache.get(db.fetch(`salvomodlog_${emoji.guild.id}`));
-  if (!c) return;
+  const embed = new Discord.MessageEmbed()
 
-    let embed = new Discord.MessageEmbed()//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-                    .addField(`Emoji oluşturuldu`, ` İsmi: \`${emoji.name}\`\n GIF?: **${emoji.animated}**\nID: ${emoji.id}`)
-                    .setTimestamp()
-                    .setColor("Black")
-                    .setFooter(`${emoji.client.user.username}#${emoji.client.user.discriminator}`, emoji.client.user.avatarURL)
+    .setTitle(message.author.username + " | Mesaj Silindi")
 
-    c.send(embed)
-    });
-client.on('emojiDelete', emoji => {//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-  const c = emoji.guild.channels.cache.get(db.fetch(`salvomodlog_${emoji.guild.id}`));//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-  if (!c) return;
+    .addField("Kullanıcı: ", message.author)
 
-    let embed = new Discord.MessageEmbed()
-                    .addField(`Emoji silindi`, ` İsmi: \`${emoji.name}\`\n GIF? : **${emoji.animated}**\nID: ${emoji.id}`)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-                    .setTimestamp()
-                    .setColor("Black")
-                    .setFooter(`${emoji.client.user.username}#${emoji.client.user.discriminator}`, emoji.client.user.avatarURL)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+    .addField("Kanal: ", message.channel)
 
-    c.send(embed)
-    });
-client.on('emojiUpdate', (oldEmoji, newEmoji) => {
-  const c = newEmoji.guild.channels.cache.get(db.fetch(`salvomodlog_${newEmoji.guild.id}`));
-  if (!c) return;
+    .addField("Mesaj: ", "" + message.content + "");
 
-    let embed = new Discord.MessageEmbed()
-                    .addField(`Emoji güncellendi`, ` Eski ismi: \`${oldEmoji.name}\`\n Yeni ismi: \`${newEmoji.name}\`\nID: ${oldEmoji.id}`)
-                    .setTimestamp()
-                    .setColor("Black")
-                    .setFooter(`${newEmoji.client.user.username}#${newEmoji.client.user.discriminator}`, newEmoji.client.user.avatarURL)
-
-    c.send(embed)
-    });
-
-client.on('guildBanAdd', async (guild, user) => {    
-    const channel = guild.channels.cache.get(db.fetch(`salvomodlog_${guild.id}`));
-  if (!channel) return;
-  
-  const entry = await guild.fetchAuditLogs({type: 'MEMBER_BAN_ADD'}).then(audit => audit.entries.first())
-
-    let embed = new Discord.MessageEmbed()
-                    .setAuthor(`${user.username}#${user.discriminator}`, user.avatarURL)
-                    .addField(`Kullanıcı banlandı`, ` İsmi: \`${user.username}\`\n ID: **${user.id}**\n Sebep: **${entry.reason || 'Belirtmedi'}**\n Banlayan: **${entry.executor.username}#${entry.executor.discriminator}**`)
-                    .setTimestamp()
-                    .setColor("Black")
-                    .setFooter(`${entry.executor.username}#${entry.executor.discriminator} tarafından`, entry.executor.avatarURL)
-
-    channel.send(embed)
+  log.send(embed);
 });
 
-client.on('guildBanRemove', async (guild, user) => {    
-    const channel = guild.channels.cache.get(db.fetch(`salvomodlog_${guild.id}`));
-  if (!channel) return;
-  
-  const entry = await guild.fetchAuditLogs({type: 'MEMBER_BAN_ADD'}).then(audit => audit.entries.first())
+client.on("messageUpdate", async (oldMessage, newMessage) => {
+  let modlog = await db.fetch(`log_${oldMessage.guild.id}`);
 
-    let embed = new Discord.MessageEmbed()
-                    .setAuthor(`${user.username}#${user.discriminator}`, user.avatarURL)
-                    .addField(`Kullanıcının banı açıldı`, ` İsmi: \`${user.username}\`\n ID: **${user.id}**\n Banı Kaldıran: **${entry.executor.username}#${entry.executor.discriminator}**`)
-                    .setTimestamp()
-                    .setColor("Black")//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-                    .setFooter(`${entry.executor.username}#${entry.executor.discriminator} tarafından`, entry.executor.avatarURL)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-    channel.send(embed)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-});//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-client.on('messageDelete', async message => {    
-  if(message.author.bot) return//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+  if (!modlog) return;
 
-    const channel = message.guild.channels.cache.get(db.fetch(`salvomodlog_${message.guild.id}`));//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-  if (!channel) return;//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-  
-    let embed = new Discord.MessageEmbed()
-                    .setAuthor(`${message.author.username}#${message.author.discriminator}`, message.author.avatarURL)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-                    .setTitle("Mesaj silindi")                //Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-                    .addField(`Silinen mesaj : ${message.content}`,`Kanal: ${message.channel.name}`)
-                    .addField(`Kanal:`,`${message.channel.name}`)
-                    .setTimestamp()
-                    .setColor("Black")
-                    .setFooter(`${message.client.user.username}#${message.client.user.discriminator}`, message.client.user.avatarURL)
+  let embed = new Discord.MessageEmbed()
 
-    channel.send(embed)
+    .setAuthor(oldMessage.author.username, oldMessage.author.avatarURL())
+
+    .addField("**Eylem:**", "Mesaj Düzenleme")
+
+    .addField(
+      "**Mesajın sahibi:**",
+      `<@${oldMessage.author.id}> === **${oldMessage.author.id}**`
+    )
+
+    .addField("**Eski Mesajı:**", `${oldMessage.content}`)
+
+    .addField("**Yeni Mesajı:**", `${newMessage.content}`)
+
+    .setTimestamp()
+
+    .setColor("#ff0000")
+
+    .setFooter(
+      `Sunucu: ${oldMessage.guild.name} - ${oldMessage.guild.id}`,
+      oldMessage.guild.iconURL()
+    )
+
+    .setThumbnail(oldMessage.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
 });
 
-client.on('messageUpdate', async(oldMessage, newMessage) => {//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-    if(oldMessage.author.bot) return;//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-    if(oldMessage.content == newMessage.content) return;//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+client.on("channelCreate", async channel => {
+  let modlog = await db.fetch(`log_${channel.guild.id}`);
 
-    const channel = oldMessage.guild.channels.cache.get(db.fetch(`salvomodlog_${oldMessage.guild.id}`));
-    if(!channel) return;//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+  if (!modlog) return;
 
-    let embed = new Discord.MessageEmbed()
-    .setTitle("Mesaj güncellendi!")//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-    .addField("Eski mesaj : ",`${oldMessage.content}`)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-    .addField("Yeni mesaj : ",`${newMessage.content}`)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-    .addField("Kanal : ",`${oldMessage.channel.name}`)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-    .setTimestamp()//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-    .setColor("Black")//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-    .setFooter(`${oldMessage.client.user.username}#${oldMessage.client.user.discriminator}`,`${oldMessage.client.user.avatarURL}`)
-//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-    channel.send(embed)
-});//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+  const entry = await channel.guild
+    .fetchAuditLogs({ type: "CHANNEL_CREATE" })
+    .then(audit => audit.entries.first());
 
-client.on('roleCreate', async (role) => {    
+  let kanal;
 
-    const channel = role.guild.channels.cache.get(db.fetch(`salvomodlog_${role.guild.id}`));
-  if (!channel) return;
-  
-    let embed = new Discord.MessageEmbed()
-.addField(`Rol oluşturuldu`, ` ismi: \`${role.name}\`\n ID: ${role.id}`)       //Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5             
-.setTimestamp()
-.setColor("Black")//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-.addField("Rol renk kodu : ",`${role.hexColor}`)
-.setFooter(`${role.client.user.username}#${role.client.user.discriminator}`, role.client.user.avatarURL)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+  if (channel.type === "text") kanal = `<#${channel.id}>`;
 
-    channel.send(embed)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-});//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+  if (channel.type === "voice") kanal = `\`${channel.name}\``;
 
-client.on('roleDelete', async (role) => {    //Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+  let embed = new Discord.MessageEmbed()
 
-    const channel = role.guild.channels.cache.get(db.fetch(`salvomodlog_${role.guild.id}`));//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-  if (!channel) return;
-  //Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-    let embed = new Discord.MessageEmbed()
-.addField(`Rol silindi`, ` ismi: \`${role.name}\`\n ID: ${role.id}`)                    
-.setTimestamp()//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-.setColor("Black")
-    .addField("Rol renk kodu : ",`${role.hexColor}`)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-.setFooter(`${role.client.user.username}#${role.client.user.discriminator}`, role.client.user.avatarURL)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
 
-    channel.send(embed)//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+    .addField("**Eylem:**", "Kanal Oluşturma")
 
-    //Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+    .addField("**Kanalı Oluşturan Kişi:**", `<@${entry.executor.id}>`)
+
+    .addField("**Oluşturduğu Kanal:**", `${kanal}`)
+
+    .setTimestamp()
+
+    .setColor("#ff0000")
+
+    .setFooter(
+      `Sunucu: ${channel.guild.name} - ${channel.guild.id}`,
+      channel.guild.iconURL()
+    )
+
+    .setThumbnail(channel.guild.iconUR);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("channelDelete", async channel => {
+  let modlog = await db.fetch(`log_${channel.guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await channel.guild
+    .fetchAuditLogs({ type: "CHANNEL_DELETE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Kanal Silme")
+
+    .addField("**Kanalı Silen Kişi:**", `<@${entry.executor.id}>`)
+
+    .addField("**Silinen Kanal:**", `\`${channel.name}\``)
+
+    .setTimestamp()
+
+    .setColor("#ff0000")
+
+    .setFooter(
+      `Sunucu: ${channel.guild.name} - ${channel.guild.id}`,
+      channel.guild.iconURL()
+    )
+
+    .setThumbnail(channel.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("roleCreate", async role => {
+  let modlog = await db.fetch(`log_${role.guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await role.guild
+    .fetchAuditLogs({ type: "ROLE_CREATE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Rol Oluşturma")
+
+    .addField("**Rolü Oluşturan Kişi:**", `<@${entry.executor.id}>`)
+
+    .addField("**Oluşturulan Rol:**", `\`${role.name}\` **=** \`${role.id}\``)
+
+    .setTimestamp()
+
+    .setFooter(
+      `Sunucu: ${role.guild.name} - ${role.guild.id}`,
+      role.guild.iconURL
+    )
+
+    .setColor("#ff0000")
+
+    .setThumbnail(role.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("roleDelete", async role => {
+  let modlog = await db.fetch(`log_${role.guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await role.guild
+    .fetchAuditLogs({ type: "ROLE_DELETE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Rol Silme")
+
+    .addField("**Rolü Silen Kişi:**", `<@${entry.executor.id}>`)
+
+    .addField("**Silinen Rol:**", `\`${role.name}\` **=** \`${role.id}\``)
+
+    .setTimestamp()
+
+    .setFooter(
+      `Sunucu: ${role.guild.name} - ${role.guild.id}`,
+      role.guild.iconURL
+    )
+
+    .setColor("#ff0000")
+
+    .setThumbnail(role.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("emojiCreate", async emoji => {
+  let modlog = await db.fetch(`log_${emoji.guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await emoji.guild
+    .fetchAuditLogs({ type: "EMOJI_CREATE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Emoji Oluşturma")
+
+    .addField("**Emojiyi Oluşturan Kişi:**", `<@${entry.executor.id}>`)
+
+    .addField("**Oluşturulan Emoji:**", `${emoji} - İsmi: \`${emoji.name}\``)
+
+    .setTimestamp()
+
+    .setColor("#ff0000")
+
+    .setFooter(
+      `Sunucu: ${emoji.guild.name} - ${emoji.guild.id}`,
+      emoji.guild.iconURL
+    )
+
+    .setThumbnail(emoji.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("emojiDelete", async emoji => {
+  let modlog = await db.fetch(`log_${emoji.guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await emoji.guild
+    .fetchAuditLogs({ type: "EMOJI_DELETE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Emoji Silme")
+
+    .addField("**Emojiyi Silen Kişi:**", `<@${entry.executor.id}>`)
+
+    .addField("**Silinen Emoji:**", `${emoji}`)
+
+    .setTimestamp()
+
+    .setFooter(
+      `Sunucu: ${emoji.guild.name} - ${emoji.guild.id}`,
+      emoji.guild.iconURL
+    )
+
+    .setColor("#ff0000")
+
+    .setThumbnail(emoji.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("emojiUpdate", async (oldEmoji, newEmoji) => {
+  let modlog = await db.fetch(`log_${oldEmoji.guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await oldEmoji.guild
+    .fetchAuditLogs({ type: "EMOJI_UPDATE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Emoji Güncelleme")
+
+    .addField("**Emojiyi Güncelleyen Kişi:**", `<@${entry.executor.id}>`)
+
+    .addField(
+      "**Güncellenmeden Önceki Emoji:**",
+      `${oldEmoji} - İsmi: \`${oldEmoji.name}\``
+    )
+
+    .addField(
+      "**Güncellendikten Sonraki Emoji:**",
+      `${newEmoji} - İsmi: \`${newEmoji.name}\``
+    )
+
+    .setTimestamp()
+
+    .setColor("#ff0000")
+
+    .setFooter(
+      `Sunucu: ${oldEmoji.guild.name} - ${oldEmoji.guild.id}`,
+      oldEmoji.guild.iconURL
+    )
+
+    .setThumbnail(oldEmoji.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("guildBanAdd", async (guild, user) => {
+  let modlog = await db.fetch(`log_${guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await guild
+    .fetchAuditLogs({ type: "MEMBER_BAN_ADD" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Yasaklama")
+
+    .addField("**Kullanıcıyı Yasaklayan Yetkili:**", `<@${entry.executor.id}>`)
+
+    .addField("**Yasaklanan Kullanıcı:**", `**${user.tag}** - ${user.id}`)
+
+    .addField("**Yasaklanma Sebebi:**", `${entry.reason}`)
+
+    .setTimestamp()
+
+    .setColor("#ff0000")
+
+    .setFooter(`Sunucu: ${guild.name} - ${guild.id}`, guild.iconURL)
+
+    .setThumbnail(guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("guildBanRemove", async (guild, user) => {
+  let modlog = await db.fetch(`log_${guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await guild
+    .fetchAuditLogs({ type: "MEMBER_BAN_REMOVE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Yasak Kaldırma")
+
+    .addField("**Yasağı Kaldıran Yetkili:**", `<@${entry.executor.id}>`)
+
+    .addField(
+      "**Yasağı Kaldırılan Kullanıcı:**",
+      `**${user.tag}** - ${user.id}`
+    )
+
+    .setTimestamp()
+
+    .setColor("#ff0000")
+
+    .setFooter(`Sunucu: ${guild.name} - ${guild.id}`, guild.iconURL)
+
+    .setThumbnail(guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
 });
 //modlogson
 
