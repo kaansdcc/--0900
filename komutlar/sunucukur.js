@@ -15,6 +15,10 @@ message.channel.send(new Discord.MessageEmbed()
 \`r!public-tema\` 
 **Hazır karışık __public__ sunucu teması yollar**
 
+\`r!public-tema2\` 
+**Hazır karışık __public__ sunucu teması yollar 2**
+
+
 \`r!oyun-tema\` 
 **Hazır __oyun__ sunucu teması yollar**
 
