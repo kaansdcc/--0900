@@ -43,15 +43,7 @@ const Asreaper = new Discord.MessageEmbed()
 .setThumbnail(user.avatarURL())
 .setDescription(`
 
-•**Bayrak:** ${bayrak}
-║══════════════════════
-•**Cinsiyet:** ${cinsiyet}
-║══════════════════════
-•**İsim:** ${isim}
-║══════════════════════
-•**Soy İsim:** ${soyisim}
-║══════════════════════
-•**Yaş:** ${yas}
+
 ║══════════════════════
 **Son Mesaj İD: ** ${message.author.lastMessageID}
 ║══════════════════════
