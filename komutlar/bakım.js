@@ -1,35 +1,45 @@
+const Discord = require('discord.js'); //umt ❤️ BotClub
+const database = require('quick.db');
 
-const Discord = require("discord.js");
-const ayarlar = require('../ayarlar.json');
-const db = require('quick.db');
+exports.run = async (client, message, args) => {
+if(message.author.id !== 'sizin id') return;
 
-//SC ekibi
-exports.run = async(client, message, args) => {
-  let prefix = ayarlar.prefix
+function botclub(content) {
+const infoEmbed = new Discord.MessageEmbed()
+.setColor('BLUE')
+.setDescription(content)
+.setTimestamp()
+.setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }));
+return message.channel.send(infoEmbed)
+};
 
- if(message.author.id !== "627915338230661131") return message.channel.send(" Bu komutu sadece geliştiricim kullanabilir.");
-  if (!args[0]) return message.channel.send(`Yanlış Kullanım ---> **${prefix}bakım aç** / **${prefix}bakım kapat**`)
+const durum = await database.fetch(client.user.id);
+if(durum == true) {
 
-  if(args[0] == 'kapat') {
-    db.delete(`SC`)
-    message.channel.send(`**Bot Başarıyla Bakımdan Çıkarıldı**`)
-    return;
-  }
-  
+await database.delete(client.user.id);
+return botclub(' Bakım artık sona erdi,herkes komutları kullanabilir.');
 
-  if(args[0] == 'aç') {
-  
-db.set(`SC`,'aktif')
-    message.channel.send(`**Bot Başarıyla Bakıma Alındı**`)
-}}
-exports.conf = { //SC ekibi
+} else {
+
+await database.set(client.user.id, true);
+database.set(client.user.id+':)', { 
+author: message.author,
+time: Date.now() 
+});
+
+return botclub(' Bakım modu açıldı.\nArtık sahibim dışında kimse komutları kullanamayacak.');
+};
+
+
+}; 
+exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
-  permLevel: 2
+  aliases: ['bakım', 'b'],
+  permLevel: 0
 };
-
+ 
 exports.help = {
-  name: "bakım"
-
-};
+  name: 'bakım-modu',
+    description: 'bakım'
+}; 

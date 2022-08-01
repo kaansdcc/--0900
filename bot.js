@@ -37,11 +37,20 @@ let karaliste = db.fetch(`kliste.${message.author.id}`);
     .setImage('https://cdn.glitch.com/322deae8-c50e-4ad8-a7d2-ff13f650466d%2Ftenor.gif')
    if(karaliste) return message.channel.send(aa)
 /* if(cmd) kısmının üzerine bunu yazıyorsunuz */
+  if(cmd && cmd.help.name !== 'bakım-modu') {
+  const deger =  require('quick.db').fetch(client.user.id);
+  if(deger == true) {
+  var DURATION = require('humanize-duration');
+  const umt = database.fetch(client.user.id+':)');
+  var TIMESTAMP = Date.now() - umt.time;
+  var RESULT = DURATION(TIMESTAMP, { language: 'tr', round: true, conjunction: ', ', serialComma: false });
+if (message.author.id != "sizin id"){
+  message.react('❌');
+  return message.reply(`Bot, size daha iyi hizmet verebilmek için şuanda bakımda.\nYaklaşık ***${RESULT} önce*** bakıma alınmış.\nBakıma alan: ***${umt.author.tag}***`);
+}
+  };
+  };
 
-    if (perms < cmd.conf.permLevel) return;//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
-    cmd.run(client, message, params, perms);
-  }
-})
 
 const bot = new Discord.Client();//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
 
