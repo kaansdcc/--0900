@@ -36,6 +36,7 @@ let karaliste = db.fetch(`kliste.${message.author.id}`);
     .addField('Kara listeye alınma sebebin',karaliste)
     .setImage('https://cdn.glitch.com/322deae8-c50e-4ad8-a7d2-ff13f650466d%2Ftenor.gif')
    if(karaliste) return message.channel.send(aa)
+/* if(cmd) kısmının üzerine bunu yazıyorsunuz */
 
     if (perms < cmd.conf.permLevel) return;//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
     cmd.run(client, message, params, perms);
