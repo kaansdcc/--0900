@@ -27,6 +27,7 @@ client.on("message", message => {//Rache Code , Telif Hakları Vardır, https://
     cmd = client.commands.get(client.aliases.get(command));
   }//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
 
+  
   if (cmd) {//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
 let karaliste = db.fetch(`kliste.${message.author.id}`);
    const aa = new Discord.MessageEmbed()//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
@@ -36,23 +37,23 @@ let karaliste = db.fetch(`kliste.${message.author.id}`);
     .addField('Kara listeye alınma sebebin',karaliste)
     .setImage('https://cdn.glitch.com/322deae8-c50e-4ad8-a7d2-ff13f650466d%2Ftenor.gif')
    if(karaliste) return message.channel.send(aa)
-/* if(cmd) kısmının üzerine bunu yazıyorsunuz */
-  if(cmd && cmd.help.name !== 'bakım-modu') {
-  const deger =  require('quick.db').fetch(client.user.id);
-  if(deger == true) {
-  var DURATION = require('humanize-duration');
-  const umt = database.fetch(client.user.id+':)');
-  var TIMESTAMP = Date.now() - umt.time;
-  var RESULT = DURATION(TIMESTAMP, { language: 'tr', round: true, conjunction: ', ', serialComma: false });
-if (message.author.id != "sizin id"){
-  message.react('❌');
-  return message.reply(`Bot, size daha iyi hizmet verebilmek için şuanda bakımda.\nYaklaşık ***${RESULT} önce*** bakıma alınmış.\nBakıma alan: ***${umt.author.tag}***`);
-}
-  };
-  };
+if (cmd) {
+  let bakım = db.fetch('bakım');
+  if(message.author.id !== ayarlar.sahip){
+  if(bakım){
+ return message.channel.send(`**:smiling_face_with_3_hearts:  Sizlere En İyi Hizmeti Verebilmek İçin Bakımdayız.\n❓ Bakım Sebebi: \`${bakım}\`\n:key:  Lütfen Daha Sonra Tekrar Deneyin.**`)
+     }
+  }
+    }
 
+    if (perms < cmd.conf.permLevel) return;//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+    cmd.run(client, message, params, perms);
+  }
+})
 
 const bot = new Discord.Client();//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
+
+//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5//Rache Code , Telif Hakları Vardır, https://discord.gg/mMMpTt5
 
 var oyun = [
 `♛ Rache, Sizin İçin Tasarlandı`,
