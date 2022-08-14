@@ -3,7 +3,7 @@ const db = require('quick.db')
 const ayarlar = require('../ayarlar.json')
 exports.run = (client,message,args)=>{
 
-    if(message.author.id !== "627915338230661131") return message.channel.send('Bu komut sahibimin komudu. Bunu kullanmak için izniniz yok!!')
+    if(message.author.id !== "823530737906090014") return message.channel.send('Bu komut sahibimin komudu. Bunu kullanmak için izniniz yok!!')
     let user = message.mentions.users.first() || client.users.cache.get(args[0])
     if(!user) return message.channel.send('Beyaz Listeye almam için bir kullanıcı etiketleyin !!')
 
