@@ -1,6 +1,9 @@
 const Discord = require("discord.js");
 const data = require("quick.db");
 
+ 
+ 
+
      
 exports.run = async (client, message, args) => {
   const prefix =
