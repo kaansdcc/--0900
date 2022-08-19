@@ -23,6 +23,7 @@ dependencies:
   request: 2.88.2
   snekfetch: 4.0.4
   utf-8-validate: 5.0.4
+  uuid: 3.4.0
   weather.js: 0.1.0
   ws: 7.4.2
 packages:
@@ -2191,6 +2192,7 @@ packages:
     resolution:
       integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
   /uuid/3.4.0:
+    deprecated: 'Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.'
     dev: false
     hasBin: true
     resolution:
@@ -2321,5 +2323,6 @@ specifiers:
   request: ^2.88.2
   snekfetch: ^4.0.4
   utf-8-validate: ^5.0.3
+  uuid: ^3.4.0
   weather.js: ^0.1.0
   ws: ^7.4.2
